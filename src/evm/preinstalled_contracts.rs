@@ -2799,4 +2799,13 @@ fn test_set_gas_price_estimate() {
 }
 
 #[test]
-fn test_kz_injection() {}
+fn test_kz_injection_tests() {
+    let _ = _kz_hack_test(None, false).unwrap();
+}
+
+pub fn _kz_hack_test(log_to: Option<&Path>, debug: bool) -> Result<(), ethabi::Error> {
+    let mut machine = load_from_file(Path::new("arb_os/arbos.mexe"));
+    machine.start_at_zero(true);
+    machine.write_coverage("kz_hack_test".to_string());
+    Ok(())
+}
