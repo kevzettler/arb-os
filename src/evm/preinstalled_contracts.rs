@@ -2797,3 +2797,6 @@ fn test_set_gas_price_estimate() {
 
     machine.write_coverage("test_set_gas_price_estimate".to_string());
 }
+
+#[test]
+fn test_kz_injection() {}
